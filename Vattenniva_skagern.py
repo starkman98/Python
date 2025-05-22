@@ -13,7 +13,7 @@ def fetch_water_level():
         soup = BeautifulSoup(response.text, 'html.parser')
         text = soup.get_text()
 
-        match = re.search(r'Vattennivare:\s*\+([\d.,]+)\s*m', text)
+        match = re.search(r'Vattennivå:\s*\+([\d.,]+)\s*m', text)
         if match:
             return f"+{match.group(1)} m"
         else:
