@@ -21,7 +21,7 @@ def fetch_water_level():
     except Exception:
             print(f"Error: {traceback.format_exc()}")
     
-@app.route('/api/vattenniva')
+@app.route('/api/vattenniva', methods=["GET"])
 def get_vattenniva():
     try:
         level = fetch_water_level()
